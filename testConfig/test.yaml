@@ -1,0 +1,9 @@
+test:
+  testBool: true
+  testString: "helo"
+  testInt: 32
+  testFloat: 64.98
+  testList:
+    - "a"
+    - "b"
+    - "c"
