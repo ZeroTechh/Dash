@@ -33,10 +33,10 @@ func GetConfig(file string, paths []string) Config {
 
 	filePath := getPath(file, paths)
 
-	content, err := ioutil.ReadFile(filePath)
+	content, _ := ioutil.ReadFile(filePath)
 
 	config := map[interface{}]interface{}{}
-	err = yaml.Unmarshal(content, &config)
+	err := yaml.Unmarshal(content, &config)
 	if err != nil {
 		panic(fmt.Sprintf("Cant Load Yaml Config Because Of Error %+v", err))
 	}
