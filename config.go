@@ -1,4 +1,4 @@
-package dash
+package hades
 
 //Config allows easy management of map config data
 type Config struct {
