@@ -1,11 +1,10 @@
 package hades
 
 import (
-	"fmt"
 	"io/ioutil"
 	"os"
 
-	"gopkg.in/yaml.v2"
+	"gopkg.in/yaml.v3"
 )
 
 // exists returns whether the given file or directory exists
@@ -35,11 +34,8 @@ func GetConfig(file string, paths []string) Config {
 
 	content, _ := ioutil.ReadFile(filePath)
 
-	config := map[interface{}]interface{}{}
-	err := yaml.Unmarshal(content, &config)
-	if err != nil {
-		panic(fmt.Sprintf("Cant Load Yaml Config Because Of Error %+v", err))
-	}
+	config := map[string]interface{}{}
+	yaml.Unmarshal(content, &config)
 
 	return Config{data: config}
 }

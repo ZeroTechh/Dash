@@ -2,7 +2,7 @@ package hades
 
 //Config allows easy management of map config data
 type Config struct {
-	data map[interface{}]interface{}
+	data map[string]interface{}
 }
 
 //Interface returns an interface value from config
@@ -38,6 +38,6 @@ func (config Config) List(name string) []interface{} {
 //Map returns a sub map from config
 func (config Config) Map(name string) Config {
 	return Config{
-		data: config.data[name].(map[interface{}]interface{}),
+		data: config.data[name].(map[string]interface{}),
 	}
 }
