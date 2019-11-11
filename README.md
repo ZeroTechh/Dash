@@ -1,7 +1,8 @@
-# Dash
+# Hades
 Easily Manage Config Files In Go
 
 ## Example
+
 config.yaml
 ```yaml
 test:
@@ -14,10 +15,11 @@ test:
     - "b"
     - "c'
 ```
+
 main.go
 ```go
 // provide it with the filename and different path where config file could be
-config := dash.GetConfig("test.yaml", []string{"path1", "path2"})
+config := hades.GetConfig("config.yaml", []string{"path1", "path2"})
 test := config.Map("test")
 testInt := test.Int("testInt")
 testFloat := test.Float("testFloat")
