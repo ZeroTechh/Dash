@@ -37,5 +37,5 @@ func GetConfig(file string, paths []string) Config {
 	config := map[string]interface{}{}
 	yaml.Unmarshal(content, &config)
 
-	return Config{data: config}
+	return Config{Data: config}
 }

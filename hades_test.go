@@ -11,7 +11,7 @@ func TestDash(t *testing.T) {
 	assert := assert.New(t)
 
 	config := GetConfig("test.yaml", []string{"", "testConfig"})
-	fmt.Println(config.data)
+	fmt.Println(config.Data)
 	test := config.Map("test")
 	assert.NotZero(test.Int("testInt"))
 	assert.NotZero(test.Bool("testBool"))
